@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevBoard</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4f46e5',
+                        'primary-light': '#f5f5ff',
+                        'card-bg': '#ffffff',
+                        'primary-dark': '#3c3799', // Darker shade for hover effect
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#f5f8ff] min-h-screen p-4 font-sans">
+<div class="max-w-6xl mx-auto">
+    <!-- Header -->
+    <div class="bg-white rounded-xl p-4 mb-6 border border-blue-100 flex justify-between items-center">
+    <div class="flex items-center">
+     <div class="bg rounded-lg p-2 mr-2">
+    <img src="./assets/logo.png" alt="">
+    </div>
+    <h1 class="text-xl font-bold">Dev<span class="text-primary">Board</span></h1>
+    </div>
+    <div class="flex items-center space-x-4">
+    <div class="gap-4 flex items-center bg-blue-50 rounded-lg px-3 py-1">
+   
+    <img class="h-5 w-5 " src="./assets/checkbox.png" alt="">
+    <span class="font-bold" id="navbar-count">23</span>
+    </div>
+    <div class="bg-gradient-to-r from-blue-500 to-purple-500 rounded-full h-8 w-8 flex items-center justify-center text-white">
+   
+        <div id="theme-toggle" class="bg-gradient-to-r from-blue-500 to-purple-500 rounded-full h-8 w-8 flex items-center justify-center text-white cursor-pointer">
+            <div class="bg-slate-100 rounded-full p-1"><img src="./assets/theme-btn.png" alt=""></div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+    <!-- Left Content (Tasks) -->
+    <div class="lg:col-span-3">
+    <!-- Summary Section -->
+    <div class="bg-white rounded-xl p-6 mb-6 grid grid-cols-3 gap-4">
+    <!-- Task Count -->
+    <div class="  flex items-center bg-[#f4f7ff] rounded-xl justify-center">
+    <div class="bg-blue-100 rounded-lg p-2 mr-3">
+   
+    <img src="./assets/checkbox.png" alt="">
+    </div>
+    <div>
+    <p class="text-sm text-gray-500">Task Assigned</p>
+    <p class="text-2xl font-bold"id="task-count">06</p>
+    </div>
+    </div>
+<!-- Discover Banner (Clickable) -->
+<div onclick="window.location.href='blog.html';"
+    class="bg-gradient-to-r from-blue-600 to-blue-400 rounded-xl p-4 col-span-1 flex items-center cursor-pointer hover:from-blue-600 hover:to-blue-200 transition-colors duration-300">
+    <div class="bg-transparent  rounded-lg p-2 mr-3">
+       <img src="./assets/board.png" alt="">
+    </div>
+    <div class="text-white">
+        <p class="font-medium">Discover Something</p>
+        <p class="text-sm">New Today!</p>
+    </div>
+</div>
+
+
+
+    <!-- Date -->
+    <div class="justify-center flex items-center bg-[#f4f7ff] rounded-xl p-3">
+    <div class="bg-blue-100 rounded-lg p-2 mr-3">
+   
+    <img src="./assets/calender.png" alt="">
+    </div>
+    <div>
+    <p class="text-sm text-gray-500">Wed ,</p>
+    <p class="text-lg font-bold">Jul 28 2025</p>
+    </div>
+    </div>
+    </div>
+
+    <!-- Task Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Task Card 1 -->
+    <div class="bg-white rounded-xl p-5 shadow-sm">
+    <p class="text-sm text-gray-500 mb-2">ShopCase</p>
+    <h3 class="text-lg font-bold mb-3">Fix Mobile Button Issue</h3>
+    <p class="text-sm text-gray-500 mb-6">Debug using Chrome DevTools, check for overlapping elements</p>
+    <div class="flex justify-between items-center">
+    <div>
+    <p class="text-xs text-gray-500">Deadline</p>
+    <p class="text-sm font-medium">21 March 2025</p>
+    </div>
+    <button class="bg-primary text-white px-4 py-2 rounded-lg text-sm"onclick="completeTask(this)" >Completed</button>
+    </div>
+    </div>
+
+    <!-- Task Card 2 -->
+    <div class="bg-white rounded-xl p-5 shadow-sm">
+    <p class="text-sm text-gray-500 mb-2">CloudSync</p>
+    <h3 class="text-lg font-bold mb-3">Add Dark Mode</h3>
+    <p class="text-sm text-gray-500 mb-6">Store the user's preference in localStorage, update CSS variables</p>
+    <div class="flex justify-between items-center">
+    <div>
+    <p class="text-xs text-gray-500">Deadline</p>
+    <p class="text-sm font-medium">21 March 2025</p>
+    </div>
+    <button class="bg-primary text-white  px-4 py-2 rounded-lg text-sm" onclick="completeTask(this)">Completed</button>
+    </div>
+    </div>
+
+    <!-- Task Card 3 -->
+    <div class="bg-white rounded-xl p-5 shadow-sm">
+    <p class="text-sm text-gray-500 mb-2">SwiftPay</p>
+    <h3 class="text-lg font-bold mb-3">Optimize Home page</h3>
+    <p class="text-sm text-gray-500 mb-6">Debug using Chrome DevTools, check for overlapping elements</p>
+    <div class="flex justify-between items-center">
+    <div>
+    <p class="text-xs text-gray-500">Deadline</p>
+    <p class="text-sm font-medium">21 March 2025</p>
+    </div>
+    <button class="bg-primary text-white px-4 py-2 rounded-lg text-sm" onclick="completeTask(this)">Completed</button>
+    </div>
+    </div>
+
+    <!-- Task Card 4 -->
+    <div class="bg-white rounded-xl p-5 shadow-sm">
+    <p class="text-sm text-gray-500 mb-2">Meta</p>
+    <h3 class="text-lg font-bold mb-3">Add new emoji 😀</h3>
+    <p class="text-sm text-gray-500 mb-6">Debug using Chrome DevTools, check for overlapping elements</p>
+    <div class="flex justify-between items-center">
+    <div>
+    <p class="text-xs text-gray-500">Deadline</p>
+    <p class="text-sm font-medium">21 March 2025</p>
+    </div>
+    <button class="bg-primary text-white px-4 py-2 rounded-lg text-sm" onclick="completeTask(this)">Completed</button>
+    </div>
+    </div>
+
+    <!-- Task Card 5 -->
+    <div class="bg-white rounded-xl p-5 shadow-sm">
+    <p class="text-sm text-gray-500 mb-2">Google LLC</p>
+    <h3 class="text-lg font-bold mb-3">Integrate OpenAI API</h3>
+    <p class="text-sm text-gray-500 mb-6">Debug using Chrome DevTools, check for overlapping elements</p>
+    <div class="flex justify-between items-center">
+    <div>
+    <p class="text-xs text-gray-500">Deadline</p>
+    <p class="text-sm font-medium">21 March 2025</p>
+    </div>
+    <button class="bg-primary text-white px-4 py-2 rounded-lg text-sm" onclick="completeTask(this)">Completed</button>
+    </div>
+    </div>
+
+    <!-- Task Card 6 -->
+    <div class="bg-white rounded-xl p-5 shadow-sm">
+    <p class="text-sm text-gray-500 mb-2 ">Glassdoor</p>
+    <h3 class="text-lg font-bold mb-3">Improve Job searching</h3>
+    <p class="text-sm text-gray-500 mb-6">Debug using Chrome DevTools, check for overlapping elements</p>
+    <div class="flex justify-between items-center">
+     <div>
+    <p class="text-xs text-gray-500">Deadline</p>
+    <p class="text-sm font-medium">21 March 2025</p>
+    </div>
+    <button class="bg-primary text-white px-4 py-2 rounded-lg text-sm" onclick="completeTask(this)">Completed</button>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- Right Sidebar (Activity Log) -->
+    <div class="lg:col-span-1">
+    <div class="bg-white rounded-xl p-6 h-full">
+    <div class="  items-center mb-6">
+    <div class="flex items-center">
+   
+    
+   <div class="mx-auto">
+    <div class="flex gap-3 justify-center items-center mb-2">
+        <img class="" src="./assets/activity.png" alt="">
+        <h3 class="font-medium text-xl ">Activity Log</h3>    
+    </div>
+    <button class="bg-primary text-white px-4 py-2 rounded-lg text-sm ml-3">Clear History</button>
+</div>
+
+   </div>
+    </div>
+
+    <!-- Activity Items -->
+    <div class="space-y-4 ">
+    <div class="border-l-2 border-blue-200 pl-4 py-1 ">
+    <p class="text-sm">You have Complete The Task Add Dark Mode at 12:48:15 PM</p>
+    </div>
+    <div class="border-l-2 border-blue-200 pl-4 py-1">
+    <p class="text-sm">You have Complete The Task Add Dark Mode at 12:48:15 PM</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+     
+</body>
+<script src="./index.js"></script>
+<script>
+    function completeTask(button) {
+        // Change button color & text
+        button.innerText = "Completed"; // Change text to "Completed"
+        button.classList.remove("bg-primary"); // Remove the primary color
+        button.classList.add("bg-gray-400", "cursor-not-allowed"); // Add gray color & disable button
+        button.disabled = true; // Disable the button
+
+        // Decrease task count
+        let taskCount = document.getElementById("task-count");
+        taskCount.innerText = Math.max(0, parseInt(taskCount.innerText) - 1); // Decrease the task count
+
+        // Increase navbar count
+        let navbarCount = document.getElementById("navbar-count");
+        navbarCount.innerText = parseInt(navbarCount.innerText) + 1; // Increase the navbar count
+    }
+</script>
+
+<script>
+    const themes = [
+        { name: 'default', bg: '#f5f8ff' },
+        { name: 'blue', bg: '#e6f0ff' },
+        { name: 'green', bg: '#e6fff0' },
+        { name: 'purple', bg: '#f0e6ff' },
+        { name: 'pink', bg: '#ffe6f0' }
+    ];
+    let currentThemeIndex = 0;
+
+    document.getElementById('theme-toggle').addEventListener('click', function() {
+        currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+        document.body.style.backgroundColor = themes[currentThemeIndex].bg;
+        localStorage.setItem('theme', themes[currentThemeIndex].name);
+    });
+
+    // Apply saved theme on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            const themeIndex = themes.findIndex(theme => theme.name === savedTheme);
+            if (themeIndex !== -1) {
+                currentThemeIndex = themeIndex;
+                document.body.style.backgroundColor = themes[currentThemeIndex].bg;
+            }
+        }
+    });
+</script>
+
+</html>
