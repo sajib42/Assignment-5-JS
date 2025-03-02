@@ -214,21 +214,25 @@
 </body>
 <script src="./index.js"></script>
 <script>
-    function completeTask(button) {
-        // Change button color & text
-        button.innerText = "Completed"; // Change text to "Completed"
-        button.classList.remove("bg-primary"); // Remove the primary color
-        button.classList.add("bg-gray-400", "cursor-not-allowed"); // Add gray color & disable button
-        button.disabled = true; // Disable the button
+   function completeTask(button) {
+    // Show alert
+    alert("Task marked as completed!");
 
-        
-        let taskCount = document.getElementById("task-count");
-        taskCount.innerText = Math.max(0, parseInt(taskCount.innerText) - 1); // Decrease the task count
+    // Change button color & text
+    button.innerText = "Completed"; // Change text to "Completed"
+    button.classList.remove("bg-primary"); // Remove the primary color
+    button.classList.add("bg-gray-400", "cursor-not-allowed"); // Add gray color & disable button
+    button.disabled = true; // Disable the button
 
-        
-        let navbarCount = document.getElementById("navbar-count");
-        navbarCount.innerText = parseInt(navbarCount.innerText) + 1; // Increase the navbar count
-    }
+    // Update task count
+    let taskCount = document.getElementById("task-count");
+    taskCount.innerText = Math.max(0, parseInt(taskCount.innerText) - 1); // Decrease the task count
+
+    // Update navbar count
+    let navbarCount = document.getElementById("navbar-count");
+    navbarCount.innerText = parseInt(navbarCount.innerText) + 1; // Increase the navbar count
+}
+
 </script>
 
 <script>
