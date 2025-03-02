@@ -39,9 +39,9 @@
     </div>
     <div class="bg-gradient-to-r from-blue-500 to-purple-500 rounded-full h-8 w-8 flex items-center justify-center text-white">
    
-        <div id="theme-toggle" class="bg-gradient-to-r from-blue-500 to-purple-500 rounded-full h-8 w-8 flex items-center justify-center text-white cursor-pointer">
-            <div class="bg-slate-100 rounded-full p-1"><img src="./assets/theme-btn.png" alt=""></div>
-        </div>
+    <div id="theme-toggle" class="bg-gradient-to-r from-blue-500 to-purple-500 rounded-full h-8 w-8 flex items-center justify-center text-white cursor-pointer">
+    <div class="bg-slate-100 rounded-full p-1"><img src="./assets/theme-btn.png" alt=""></div>
+    </div>
     </div>
     </div>
     </div>
@@ -63,8 +63,8 @@
     <p class="text-2xl font-bold"id="task-count">06</p>
     </div>
     </div>
-<!-- Discover Banner (Click) -->
-<div onclick="window.location.href='blog.html';"
+    <!-- Discover Banner (Click) -->
+    <div onclick="window.location.href='blog.html';"
     class="bg-gradient-to-r from-blue-600 to-blue-400 rounded-xl p-4 col-span-1 flex items-center cursor-pointer hover:from-blue-600 hover:to-blue-200 transition-colors duration-300">
     <div class="bg-transparent  rounded-lg p-2 mr-3">
        <img src="./assets/board.png" alt="">
@@ -73,7 +73,7 @@
         <p class="font-medium">Discover Something</p>
         <p class="text-sm">New Today!</p>
     </div>
-</div>
+    </div>
 
 
 
@@ -187,8 +187,8 @@
     
    <div class="mx-auto">
     <div class="flex gap-3 justify-center items-center mb-2">
-        <img class="" src="./assets/activity.png" alt="">
-        <h3 class="font-medium text-xl ">Activity Log</h3>    
+    <img class="" src="./assets/activity.png" alt="">
+    <h3 class="font-medium text-xl ">Activity Log</h3>    
     </div>
     <button class="bg-primary text-white px-4 py-2 rounded-lg text-sm ml-3">Clear History</button>
 </div>
@@ -215,25 +215,58 @@
 <script src="./index.js"></script>
 <script>
    function completeTask(button) {
-    // Show alert
     alert("Task marked as completed!");
 
-    // Change button color & text
-    button.innerText = "Completed"; // Change text to "Completed"
-    button.classList.remove("bg-primary"); // Remove the primary color
-    button.classList.add("bg-gray-400", "cursor-not-allowed"); // Add gray color & disable button
-    button.disabled = true; // Disable the button
+    button.innerText = "Completed";
+    button.classList.remove("bg-primary");
+    button.classList.add("bg-gray-400", "cursor-not-allowed");
+    button.disabled = true;
 
-    // Update task count
     let taskCount = document.getElementById("task-count");
-    taskCount.innerText = Math.max(0, parseInt(taskCount.innerText) - 1); // Decrease the task count
+    taskCount.innerText = Math.max(0, parseInt(taskCount.innerText) - 1);
 
-    // Update navbar count
     let navbarCount = document.getElementById("navbar-count");
-    navbarCount.innerText = parseInt(navbarCount.innerText) + 1; // Increase the navbar count
+    navbarCount.innerText = parseInt(navbarCount.innerText) + 1;
+
+    //  Add  line to log the completed task
+    addToActivityLog(button);
+}
+
+
+
+</script>
+<script>
+    function addToActivityLog(button) {
+    const activityLog = document.querySelector(".space-y-4"); // Activity log container
+    const taskTitle = button.parentElement.parentElement.querySelector("h3").innerText; // Get task title
+    const timeNow = new Date().toLocaleTimeString(); // Get current time
+
+    // Create new log entry
+    const logEntry = document.createElement("div");
+    logEntry.classList.add("border-l-2", "border-blue-200", "pl-4", "py-1");
+    logEntry.innerHTML = `<p class="text-sm">You have completed the task <b>${taskTitle}</b> at ${timeNow}</p>`;
+
+    // activity log 
+    activityLog.prepend(logEntry);
 }
 
 </script>
+
+
+<!-- clear-activity -->
+<script>
+    function clearActivityLog() {
+    document.querySelector(".space-y-4").innerHTML = ""; // Clear all log entries
+}
+
+</script>
+
+<script>
+document.querySelector(".bg-primary.text-white.px-4.py-2.rounded-lg.text-sm.ml-3").addEventListener("click", clearActivityLog);
+
+</script>
+
+
 
 <script>
     const themes = [
