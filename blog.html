@@ -8,85 +8,81 @@
 </head>
 <body class="bg-gray-100">
 
-    <!-- Blog Page -->
-    <div id="blog-page" class="max-w-4xl mx-auto py-10 px-6">
+<!-- Blog Page -->
+<div id="blog-page" class="max-w-4xl mx-auto py-10 px-6">
         
-        <!-- Header -->
-        <div class="bg-white rounded-xl p-4 mb-6 border border-blue-100 flex justify-between items-center shadow-md">
-            <div class="flex items-center">
-                <div class="bg-blue-500 rounded-lg p-2 mr-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                </div>
-                <h1 class="text-xl font-bold">Dev<span class="text-blue-500">Board</span></h1>
-            </div>
-            <button onclick="goBack()" class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm">Back to Home</button>
-        </div>
+<!-- Header -->
+<div class="bg-white rounded-xl p-4 mb-6 border border-blue-100 flex justify-between items-center shadow-md">
+<div class="flex items-center">
+<div class="bg-blue-500 rounded-lg p-2 mr-2">
 
-        <!-- Blog Content -->
-        <div class="bg-white rounded-xl p-8 shadow-md">
+<img class="h-6 w-6 text-white bg-transparent"    src="./assets/logo.png" alt="">
+</div>
+<h1 class="text-xl font-bold">Dev<span class="text-blue-500">Board</span></h1>
+</div>
+<button onclick="goBack()" class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm">Back to Home</button>
+</div>
+
+<!-- Blog Content -->
+<div class="bg-white rounded-xl p-8 shadow-md">
             
-            <!-- Page Title -->
-            <div class="flex justify-between items-center mb-6">
-                <h2 class="text-3xl font-bold text-gray-800">📖 Blog Articles</h2>
+<!-- Page Title -->
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-3xl font-bold text-gray-800 ">📖 Blog Articles</h2>
+</div>
+
+<!-- Blog Questions Section -->
+<div class="space-y-6">
                 
-            </div>
+<!-- Question 1 -->
+<div class="p-6 bg-gray-50 rounded-lg border shadow-sm">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">1️⃣ What are the different ways to select an element in the DOM?</h3>
+<p class="text-gray-600">
+There are several ways to select an element in the DOM: 
+<code class="bg-gray-200 px-2 py-1 rounded">document.getElementById()</code>, 
+<code class="bg-gray-200 px-2 py-1 rounded">document.querySelector()</code>, and 
+<code class="bg-gray-200 px-2 py-1 rounded">document.getElementsByClassName()</code>.
+</p>
+</div>
 
-            <!-- Blog Questions Section -->
-            <div class="space-y-6">
-                
-                <!-- Question 1 -->
-                <div class="p-6 bg-gray-50 rounded-lg border shadow-sm">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">1️⃣ What are the different ways to select an element in the DOM?</h3>
-                    <p class="text-gray-600">
-                        There are several ways to select an element in the DOM: 
-                        <code class="bg-gray-200 px-2 py-1 rounded">document.getElementById()</code>, 
-                        <code class="bg-gray-200 px-2 py-1 rounded">document.querySelector()</code>, and 
-                        <code class="bg-gray-200 px-2 py-1 rounded">document.getElementsByClassName()</code>.
-                    </p>
-                </div>
+<!-- Question 2 -->
+<div class="p-6 bg-gray-50 rounded-lg border shadow-sm">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">2️⃣ What is the difference between innerHTML, innerText, and textContent?</h3>
+<p class="text-gray-600">
+<b>innerHTML</b> allows inserting HTML, <b>innerText</b> retrieves only visible text, and <b>textContent</b> retrieves all text including hidden elements.
+</p>
+</div>
 
-                <!-- Question 2 -->
-                <div class="p-6 bg-gray-50 rounded-lg border shadow-sm">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">2️⃣ What is the difference between innerHTML, innerText, and textContent?</h3>
-                    <p class="text-gray-600">
-                        <b>innerHTML</b> allows inserting HTML, <b>innerText</b> retrieves only visible text, and <b>textContent</b> retrieves all text including hidden elements.
-                    </p>
-                </div>
+<!-- Question 3 -->
+<div class="p-6 bg-gray-50 rounded-lg border shadow-sm">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">3️⃣ What is event delegation in the DOM?</h3>
+<p class="text-gray-600">
+Event delegation is a technique where a parent element handles events for multiple child elements using event bubbling.
+</p>
+</div>
 
-                <!-- Question 3 -->
-                <div class="p-6 bg-gray-50 rounded-lg border shadow-sm">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">3️⃣ What is event delegation in the DOM?</h3>
-                    <p class="text-gray-600">
-                        Event delegation is a technique where a parent element handles events for multiple child elements using event bubbling.
-                    </p>
-                </div>
+<!-- Question 4 -->
+<div class="p-6 bg-gray-50 rounded-lg border shadow-sm">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">4️⃣ What is event bubbling in the DOM?</h3>
+<p class="text-gray-600">
+Event bubbling occurs when an event starts at the target element and propagates up to the parent elements.
+</p>
+</div>
+</div>
+</div>
 
-                <!-- Question 4 -->
-                <div class="p-6 bg-gray-50 rounded-lg border shadow-sm">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">4️⃣ What is event bubbling in the DOM?</h3>
-                    <p class="text-gray-600">
-                        Event bubbling occurs when an event starts at the target element and propagates up to the parent elements.
-                    </p>
-                </div>
+<!-- Footer with Date -->
+<div class="text-right mt-6 text-gray-500 text-sm">
+📅 03/01/2025 03:38
+</div>
+</div>
 
-            </div>
-        </div>
-
-        <!-- Footer with Date -->
-        <div class="text-right mt-6 text-gray-500 text-sm">
-            📅 03/01/2025 03:38
-        </div>
-
-    </div>
-
-    <!-- JavaScript for Navigation -->
-    <script>
-        function goBack() {
-            window.history.back(); // Go back to the previous page
-        }
-    </script>
+<!-- JavaScript for Navigation -->
+<script>
+function goBack() {
+window.history.back(); 
+}
+</script>
 
 </body>
 <script src="./index.js"></script>
